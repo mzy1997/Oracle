@@ -10,4 +10,4 @@ and d.department_name in ('IT'，'Sales')
 GROUP BY department_name;
 ```
 ## 运行结果
-![sql1](E:\oracle\sql1.png)
+![sql1]()
