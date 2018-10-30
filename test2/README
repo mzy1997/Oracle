@@ -19,8 +19,7 @@ SQL> ALTER USER ltt QUOTA 50M ON users;
 SQL> GRANT con_res_ltt TO ltt;
 SQL> exit
 ```
-![第一步](https://github.com/DoubleLTT/Oracle/blob/master/img/oracle%E5%AE%9E%E9%AA%8C.JPG)
-![第一步](https://github.com/DoubleLTT/Oracle/blob/master/img/oracle%E5%AE%9E%E9%AA%8C.JPG)
+
 
  - 第2步：新用户**ltt**连接到pdborcl，创建表mytable和视图myview，插入数据，最后将myview的SELECT对象权限授予hr用户。
  
