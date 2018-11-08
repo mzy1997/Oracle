@@ -63,7 +63,7 @@ STORAGE
  - 在MZY用户中创建分区表orders，按订单日期分区：
  
 ```sql
-CREATE TABLE LTT.orders 
+CREATE TABLE MZY.orders 
 (
  order_id NUMBER(10,0)NOT NULL 
  ,customer_name VARCHAR2(40 BYTE)NOT NULL 
@@ -93,7 +93,7 @@ PARTITION BY RANGE (order_date)
  - 在MZY用户中创建分区表使用帐号LTT创建表order_details，按订单日期分区:
  
 ```sql
-CREATE TABLE LTT.order_details 
+CREATE TABLE MZY.order_details 
 (
 id NUMBER(10, 0) NOT NULL 
 , order_id NUMBER(10, 0) NOT NULL
@@ -127,7 +127,7 @@ NOCOMPRESS NO INMEMORY
  - 插入数据的语句:
  
  ```sql
-INSERT INTO LTT.orders (order_id,customer_name ,customer_tel ,order_date ,employee_id,discount)
+INSERT INTO MZY.orders (order_id,customer_name ,customer_tel ,order_date ,employee_id,discount)
       SELECT 'test1','test1','test1'...,20 FROM DUAL
       UNION ALL SELECT 'test2','test2','test2'...,30 FROM DUAL
       UNION ALL SELECT 'test3','test3','test3'...,40 FROM DUAL
@@ -142,13 +142,13 @@ INSERT INTO LTT.orders (order_id,customer_name ,customer_tel ,order_date ,employ
  - 查询数据的语句:
 
 ```sql
-select * from sys_table where table_name=LTT.orders;
+select * from sys_table where table_name=MZY.orders;
 ``` 
 
 ### 3. 实验总结：
 
      
-     在实验过程中,以ltt的用户身份进入数据库，使用命令 ls -lh 可以查看3个表空间：
+     在实验过程中,以MZY的用户身份进入数据库，使用命令 ls -lh 可以查看3个表空间：
      USERS,USERS02,USERS03，创建两张表：订单表(orders)与订单详表(order_details)。
      使用该帐号创建分区表orders和order_details，按订单日期分区。
      分区的优点：增强可用性：如果表的一个分区由于系统故障而不能使用，
